@@ -1,0 +1,14 @@
+.my-container {
+  margin: 35px 55px;
+}
+.todo-item {
+  border-left: 4px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+.todo-item.selected {
+  border-color: green;
+}
+.todo-item:hover {
+  color: darkgray;
+}
