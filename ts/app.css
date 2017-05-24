@@ -1,0 +1,28 @@
+body{
+    padding: 35px 65px;
+}
+
+tbody tr {
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+tbody tr.selected{
+    background-color: lightgreen;
+}
+
+tbody tr:hover{
+    color: darkgray;
+}
+
+th {
+    min-width: 150px;
+}
+
+td{
+    min-width: 150px;
+}
+
+hr{
+    margin: 25px 0px;
+}

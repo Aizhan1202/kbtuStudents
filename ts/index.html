@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CRUD Application</title>
+    <link href="app.css" rel="stylesheet" />
+</head>
+<body ng-app="myMdl" ng-controller="myCtrl as $this">
+
+    <div>
+        <span>Full name: </span>
+        <input ng-model="$this.nwItem.fullName" type="text" />
+        <span>Phone number: </span>
+        <input ng-model="$this.nwItem.phoneNumber" type="text" />
+        <span> | </span>
+        <button ng-click="$this.create()">Create</button>
+        <button ng-click="$this.edit()">Edit</button>
+    </div>
+
+    <hr />
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Full name</th>
+                    <th>Phone number</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in $this.list"
+                    ng-class="{'selected': item.fullName == $this.selectedItem.fullName && item.phoneNumber == $this.selectedItem.phoneNumber}"
+                    ng-click="$this.select(item)">
+                    <td>{{$index}}</td>
+                    <td>{{item.fullName}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>
+                        <button ng-click="$this.delete($index)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
